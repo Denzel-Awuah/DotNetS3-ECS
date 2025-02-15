@@ -1,12 +1,12 @@
 ﻿namespace DotNetWebAPIS3.Models
 {
-    public class Instuctor
+    public class Instructor
     {
         public int InstructorId { get; set; }
 
         public string Name { get; set; }
         
-        public Instuctor(int instructorId, string name)
+        public Instructor(int instructorId, string name)
         {
             InstructorId = instructorId;
             Name = name;

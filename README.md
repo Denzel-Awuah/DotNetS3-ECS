@@ -1,4 +1,4 @@
-## SoccerSite
+## .NET 8 Web API with S3 and AWS ECS
 A .NET 8 Web API that stores and retrieves objects from AWS S3. Web API is deployed to AWS ECS Fargate Cluster.
 
 ## Deployment 

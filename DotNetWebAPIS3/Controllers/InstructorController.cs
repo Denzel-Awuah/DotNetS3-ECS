@@ -1,4 +1,5 @@
 ﻿using Amazon.S3;
+using Amazon.S3.Model;
 using DotNetWebAPIS3.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -20,8 +21,8 @@ namespace DotNetWebAPIS3.Controllers
         }
 
         //GET /api/instructor
-        [HttpGet]
-        public async Task<IActionResult> GetInstructorJson()
+        [HttpPost]
+        public async Task<IActionResult> GetInstructorJson(Instructor instructor)
         {
 
             //var response = await s3Client.GetObjectAsync(BUCKET_NAME, "Instructors.json");
@@ -39,10 +40,29 @@ namespace DotNetWebAPIS3.Controllers
             string jsonString = await reader.ReadToEndAsync();
 
          
-            IEnumerable<Instructor>? Instructors = JsonConvert.DeserializeObject<IEnumerable<Instructor>>(jsonString);
+            List<Instructor>? Instructors = JsonConvert.DeserializeObject<List<Instructor>>(jsonString);
 
+            Instructors?.Add(instructor);
+
+            var putObjectRequest = new PutObjectRequest
+            {
+                BucketName = BUCKET_NAME,
+                Key = "Instructors.json",
+                InputStream = TransformInputStreamFromString(JsonConvert.SerializeObject(Instructors))
+            };
+            var putObjectResponse = await s3Client.PutObjectAsync(putObjectRequest);
             return Ok(Instructors);
 
+        }
+
+        private static Stream TransformInputStreamFromString(string instructorsString)
+        {
+            var stream = new MemoryStream();
+            var writer = new StreamWriter(stream);
+            writer.Write(instructorsString);
+            writer.Flush();
+            stream.Position = 0;
+            return stream;
         }
 
 

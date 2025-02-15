@@ -7,6 +7,5 @@ Containerized the .NET Web API application using Docker then pushed the image to
 The Elastic Container Services Cluster was deployed using AWS Fargate Instances. The Cluster deployment also contained an Application Load Balancer.
 
 
-
 ## Deployment Strategy
 ![Application](/AWS-ECS-DotNet-System-Infrastructure.jpg)

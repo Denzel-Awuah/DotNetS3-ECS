@@ -46,7 +46,7 @@ namespace DotNetWebAPIS3.Controllers
                 var bucketResponse = await s3Client.PutBucketAsync(bucketRequest);
             }
 
-            return Ok(new APIResponse(name, "Bucket added"));
+            return Ok(new APIResponse(name, "Bucket added to AWS S3"));
         }
 
 

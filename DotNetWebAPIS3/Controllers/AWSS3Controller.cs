@@ -13,7 +13,7 @@ namespace DotNetWebAPIS3.Controllers
     {
 
         private IAmazonS3 s3Client;
-        private static string BUCKET_NAME = "dotnet-webapibucket";
+        private readonly string BUCKET_NAME = "dotnet-webapibucket";
 
         public AWSS3Controller(IAmazonS3 s3Client)
         {

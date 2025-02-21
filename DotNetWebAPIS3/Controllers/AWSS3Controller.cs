@@ -74,7 +74,6 @@ namespace DotNetWebAPIS3.Controllers
             return Ok(new APIResponse(name, "Bucket added to AWS S3"));
         }
 
-
         /// <summary>
         /// Gets a list of all the files within a bucket in AWS S3
         /// </summary>

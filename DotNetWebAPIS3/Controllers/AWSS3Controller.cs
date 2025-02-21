@@ -7,6 +7,10 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace DotNetWebAPIS3.Controllers
 {
+
+    /// <summary>
+    /// Controller to facilitate communications with an AWS S3 service.
+    /// </summary>
     [Route("api/[controller]")]
     [ApiController]
     public class AWSS3Controller : ControllerBase

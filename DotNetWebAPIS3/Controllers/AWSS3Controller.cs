@@ -37,6 +37,11 @@ namespace DotNetWebAPIS3.Controllers
         }
 
 
+        /// <summary>
+        /// Gets a file from AWS S3 by file name.
+        /// </summary>
+        /// <param name="fileName">The name of the file in AWS S3</param>
+        /// <returns>Returns the contents of the file</returns>
         [HttpGet("file")]
         public async Task<IActionResult> File(string fileName)
         {

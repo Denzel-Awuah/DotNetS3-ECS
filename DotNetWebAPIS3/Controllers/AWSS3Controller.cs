@@ -92,7 +92,12 @@ namespace DotNetWebAPIS3.Controllers
             return Ok(listObjectsResponse.S3Objects);
         }
 
-    
+        /// <summary>
+        /// Uploads a new object to the default or specified bucket in AWS S3
+        /// </summary>
+        /// <param name="inputBucketName">The name of the bucket</param>
+        /// <param name="file">The file to upload</param>
+        /// <returns>An API response with the name of the uploaded file</returns>
         [HttpPost("object")]
         public async Task<IActionResult> PostObject(string? inputBucketName, IFormFile file)
         {

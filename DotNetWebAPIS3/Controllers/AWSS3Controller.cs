@@ -49,7 +49,11 @@ namespace DotNetWebAPIS3.Controllers
             return File(response.ResponseStream, response.Headers.ContentType);
         }
 
-
+        /// <summary>
+        /// Creates a new bucket in AWS S3
+        /// </summary>
+        /// <param name="name">The name of the bucket</param>
+        /// <returns>An APIResponse object with the name of the new object create in AWS S3</returns>
         [HttpPost("bucket")]
         public async Task<IActionResult> PostBucket(string name)
         {
@@ -71,6 +75,11 @@ namespace DotNetWebAPIS3.Controllers
         }
 
 
+        /// <summary>
+        /// Gets a list of all the files within a bucket in AWS S3
+        /// </summary>
+        /// <param name="prefix">A prefix to apply to the objects being retrieved</param>
+        /// <returns>All the objects in the bucket</returns>
         [HttpGet("files")]
         public async Task<IActionResult> Files(string? prefix)
         {
@@ -83,7 +92,7 @@ namespace DotNetWebAPIS3.Controllers
             return Ok(listObjectsResponse.S3Objects);
         }
 
-
+    
         [HttpPost("object")]
         public async Task<IActionResult> PostObject(string? inputBucketName, IFormFile file)
         {

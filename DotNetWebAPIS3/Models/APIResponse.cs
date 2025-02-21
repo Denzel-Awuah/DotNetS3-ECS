@@ -15,6 +15,11 @@
         /// </summary>
         public string Message { get; set; }
 
+        /// <summary>
+        /// Constructor to create a new APIResponse object
+        /// </summary>
+        /// <param name="filename">Name of the file</param>
+        /// <param name="message">Message to return in response</param>
         public APIResponse(string filename, string message)
         {
             FileName = filename;

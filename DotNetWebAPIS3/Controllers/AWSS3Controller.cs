@@ -16,7 +16,14 @@ namespace DotNetWebAPIS3.Controllers
     public class AWSS3Controller : ControllerBase
     {
 
+        /// <summary>
+        /// The client service that is used to communicate with AWS S3.
+        /// </summary>
         private readonly IAmazonS3 s3Client;
+
+        /// <summary>
+        /// The name of the storage unit within AWS S3
+        /// </summary>
         private readonly string BUCKET_NAME = "dotnet-webapibucket";
 
         public AWSS3Controller(IAmazonS3 s3Client)

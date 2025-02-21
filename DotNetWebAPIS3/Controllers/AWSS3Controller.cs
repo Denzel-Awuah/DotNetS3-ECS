@@ -26,6 +26,11 @@ namespace DotNetWebAPIS3.Controllers
         /// </summary>
         private readonly string BUCKET_NAME = "dotnet-webapibucket";
 
+
+        /// <summary>
+        /// Contructor to initilize the API controller and its dependencies.
+        /// </summary>
+        /// <param name="s3Client">Service for handling commuinication with AWS S3</param>
         public AWSS3Controller(IAmazonS3 s3Client)
         {
             this.s3Client = s3Client;

@@ -30,7 +30,7 @@ namespace DotNetWebAPIS3.Controllers
         /// <summary>
         /// Contructor to initilize the API controller and its dependencies.
         /// </summary>
-        /// <param name="s3Client">Service for handling commuinication with AWS S3</param>
+        /// <param name="s3Client">A Service for handling commuinication with AWS S3</param>
         public AWSS3Controller(IAmazonS3 s3Client)
         {
             this.s3Client = s3Client;
@@ -53,7 +53,7 @@ namespace DotNetWebAPIS3.Controllers
         /// Creates a new bucket in AWS S3
         /// </summary>
         /// <param name="name">The name of the bucket</param>
-        /// <returns>An APIResponse object with the name of the new object create in AWS S3</returns>
+        /// <returns>An APIResponse object with the name of the new object create in AWS S3.</returns>
         [HttpPost("bucket")]
         public async Task<IActionResult> PostBucket(string name)
         {

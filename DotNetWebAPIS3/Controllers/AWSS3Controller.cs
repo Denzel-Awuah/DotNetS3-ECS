@@ -77,7 +77,7 @@ namespace DotNetWebAPIS3.Controllers
         /// <summary>
         /// Gets a list of all the files within a bucket in AWS S3
         /// </summary>
-        /// <param name="prefix">A prefix to apply to the objects being retrieved</param>
+        /// <param name="prefix">A prefix that is applied to the objects being retrieved</param>
         /// <returns>All the objects in the bucket</returns>
         [HttpGet("files")]
         public async Task<IActionResult> Files(string? prefix)
